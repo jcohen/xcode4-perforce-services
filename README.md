@@ -7,3 +7,5 @@ cp -R P4\ Add.workflow ~/Library/Services
 cp -R P4\ Edit.workflow ~/Library/Services
 
 In Xcode you should now see P4 Add and P4 Edit under Xcode -> Services. Further, you can select Services -> Services Preferences to bind these commands to a hotkey (I chose ⌘-⇧-A for add and ⌘-⇧-E for edit)
+
+These services will walk up the directory tree from the currently open file in Xcode and look for a .P4CONFIG file with your P4PORT, P4USER and P4CLIENT. I haven't tested extensively, but hopefully in the worst case scenario they'll just fail when they can't find a .P4CONFIG rather than going into an endless loop ;).
