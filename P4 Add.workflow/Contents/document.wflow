@@ -105,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>522.000000:1009.000000</string>
+				<string>522.000000:829.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -160,19 +160,19 @@ end run</string>
 					<string>TARGET_FILE=$1
 
 if [[ "$TARGET_FILE" -eq "" ]]; then
-    echo "No target file was specified"
+   echo "No target file was specified"
 else
 	CURRENT_DIRECTORY=$(dirname "$TARGET_FILE")
 	P4CONFIG="$CURRENT_DIRECTORY/.P4CONFIG"
 
 	while [[ ! -e "$P4CONFIG" || "$CURRENT_DIRECTORY" -ne "." || "$CURRENT_DIRECTORY" -ne "/" ]]; do
-    	CURRENT_DIRECTORY=$(dirname "$CURRENT_DIRECTORY")
+   	CURRENT_DIRECTORY=$(dirname "$CURRENT_DIRECTORY")
 	    P4CONFIG="$CURRENT_DIRECTORY/.P4CONFIG"
 	done
 
 	. $P4CONFIG
 
-	RESULT=$(/usr/local/bin/p4 add $TARGET_FILE)
+	RESULT=$(/usr/local/bin/p4 -p $P4PORT -c $P4CLIENT -u $P4USER add $TARGET_FILE 2&gt;&amp;1)
 
 	echo $RESULT
 fi</string>
@@ -215,8 +215,6 @@ fi</string>
 				</array>
 				<key>OutputUUID</key>
 				<string>DFB1703C-A5D3-49EF-BD17-16779A0BF30B</string>
-				<key>StartAction</key>
-				<false/>
 				<key>UUID</key>
 				<string>6419D3C6-2CFC-4D1E-849A-D46EAB887701</string>
 				<key>UnlocalizedApplications</key>
@@ -294,7 +292,7 @@ fi</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>522.000000:696.000000</string>
+				<string>522.000000:516.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -406,19 +404,19 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>12683762-D4C6-40F3-94E8-744094C2BBBD</key>
-		<dict>
-			<key>from</key>
-			<string>0787FF5A-9F8D-461C-9595-83C96AB7ED4B - 0787FF5A-9F8D-461C-9595-83C96AB7ED4B</string>
-			<key>to</key>
-			<string>6419D3C6-2CFC-4D1E-849A-D46EAB887701 - 6419D3C6-2CFC-4D1E-849A-D46EAB887701</string>
-		</dict>
-		<key>4F289227-D076-47CD-9E0B-D923C68A2A75</key>
+		<key>04F53A8C-2E7E-4EB6-A672-99BECC152077</key>
 		<dict>
 			<key>from</key>
 			<string>6419D3C6-2CFC-4D1E-849A-D46EAB887701 - 6419D3C6-2CFC-4D1E-849A-D46EAB887701</string>
 			<key>to</key>
 			<string>AAD31D08-EDD8-4245-AE4A-7FA25CF4D389 - AAD31D08-EDD8-4245-AE4A-7FA25CF4D389</string>
+		</dict>
+		<key>C97D76D5-0ECD-432C-A80E-FA98EC3ACF71</key>
+		<dict>
+			<key>from</key>
+			<string>0787FF5A-9F8D-461C-9595-83C96AB7ED4B - 0787FF5A-9F8D-461C-9595-83C96AB7ED4B</string>
+			<key>to</key>
+			<string>6419D3C6-2CFC-4D1E-849A-D46EAB887701 - 6419D3C6-2CFC-4D1E-849A-D46EAB887701</string>
 		</dict>
 	</dict>
 	<key>state</key>
@@ -489,9 +487,9 @@ end run</string>
 			</array>
 		</dict>
 		<key>windowFrame</key>
-		<string>{{0, 80}, {1440, 798}}</string>
+		<string>{{1117, 304}, {1440, 798}}</string>
 		<key>workflowViewScrollPosition</key>
-		<string>{{0, 285}, {1044, 530}}</string>
+		<string>{{0, 304}, {1044, 530}}</string>
 	</dict>
 	<key>workflowMetaData</key>
 	<dict>
